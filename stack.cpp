@@ -1,6 +1,6 @@
-#include <cstdio>
 #include <iostream>
 
+using namespace std;
 constexpr int max_num = 10;
 
 class Stack {
@@ -22,6 +22,9 @@ class Stack {
 			if (current_ < max_num) {
 				current_++;
 				stack_arr_[current_] = new_value;
+				cout << stack_arr_[current_] << endl;
+			} else {
+				cout << "Max entries count exceeded, please delete the latest one!\n" << endl;
 			}
 		}
 		
@@ -29,12 +32,25 @@ class Stack {
 		{
 			if (current_ > 0) {
 				current_ --;
+				cout << stack_arr_[current_] << endl;
 			}
 		}
-
 };
 
-int main () {
+int main () 
+{
+	Stack stack;
+	stack.Push_(5);
+	stack.Push_(4);
+	stack.Pop_();
+	stack.Push_(3);
+	stack.Pop_();
+	stack.Pop_();
+
+//	cout << stack_arr_[current_] << endl;
+
+
+
 
 	return 0;
 }
