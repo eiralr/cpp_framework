@@ -3,4 +3,4 @@ CC=g++
 CFLAGS=-c -Wall -Werror
 
 all:
-	g++ stack.cpp main.cpp -o stack
+	g++ main.cpp -o stack

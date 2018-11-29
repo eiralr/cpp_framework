@@ -2,7 +2,7 @@
 
 int main () 
 {
-	Stack stack;
+	Stack<int> stack;
 	stack.Push(5);
 	stack.Head();
 	stack.Push(4);
