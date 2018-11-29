@@ -1,56 +1,54 @@
 #include <iostream>
+#include <vector>
 
-using namespace std;
-constexpr int max_num = 10;
+//constexpr int max_num = 10;
 
 class Stack {
 	private:
 		int current_;
-		int * stack_arr_;
+		std::vector<int> stack_ptr_;
 	public:
 		Stack () {
-			stack_arr_ = new int[max_num];
+			stack_ptr_.reserve(1);
 			current_ = 0;
 		}
 
-		~Stack() {
-			delete stack_arr_;
-		}
+		~Stack() {}
 
-		void Push_ (int new_value)
+		void Push (int new_value)
 		{
-			if (current_ < max_num) {
 				current_++;
-				stack_arr_[current_] = new_value;
-				cout << stack_arr_[current_] << endl;
-			} else {
-				cout << "Max entries count exceeded, please delete the latest one!\n" << endl;
-			}
+				stack_ptr_[current_] = new_value;
+				std::cout << stack_ptr_[current_] << std::endl;
 		}
 		
-		void Pop_ () 
+		void Pop () 
 		{
 			if (current_ > 0) {
 				current_ --;
-				cout << stack_arr_[current_] << endl;
+				std::cout << stack_ptr_[current_] << std::endl;
+			} else {
+				std::cout << "Stack is empty.\n" << std::endl;
 			}
+		}
+
+		void Head () 
+		{
+			std::cout << stack_ptr_[current_] << std::endl;
 		}
 };
 
 int main () 
 {
 	Stack stack;
-	stack.Push_(5);
-	stack.Push_(4);
-	stack.Pop_();
-	stack.Push_(3);
-	stack.Pop_();
-	stack.Pop_();
-
-//	cout << stack_arr_[current_] << endl;
-
-
-
-
+	stack.Push(5);
+	stack.Push(4);
+//	stack.Pop();
+	stack.Head();
+	stack.Push(3);
+	stack.Pop();
+	stack.Pop();
+	stack.Pop();
+	stack.Pop();
 	return 0;
 }
