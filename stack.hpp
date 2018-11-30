@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 
-//constexpr int max_num = 10;
-
 template <typename T> class Stack {
 	public:
 		Stack () {}
@@ -25,7 +23,6 @@ template <typename T> class Stack {
 
 		T Head () 
 		{
-		//	std::cout << stack_data_.back() << std::endl;
 			return stack_data_.back();
 		}
 
