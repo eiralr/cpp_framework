@@ -25,7 +25,7 @@ template <typename T> class Stack {
 
 		T Head () 
 		{
-			std::cout << stack_data_.back() << std::endl;
+		//	std::cout << stack_data_.back() << std::endl;
 			return stack_data_.back();
 		}
 
